@@ -1,4 +1,6 @@
+<!--  Displays list of ALL planes -->
 <h2>{{ title }}</h2>
+<a ng-href="/create" class="btn btn-info">Create a New Plane</a>
 <p ng-hide="planes">LOADING PLANES NOW...</p>
 
 <div ng-repeat="p in planes">

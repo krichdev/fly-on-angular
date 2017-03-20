@@ -1,0 +1,22 @@
+<a href="/" class="btn btn-success">Back</a>
+ <h2>Update Plane Details</h2>
+
+ <form ng-submit="update()">
+     <div class="form-group">
+       <label for"manufacturer" >Manufacturer</label>
+       <input type="text" class="form-control" name="manufacturer" ng-model="plane.manufacturer">
+     </div>
+     <div class="form-group">
+       <label for="model">Model</label>
+       <input type="text" class="form-control" name="model" ng-model="plane.model">
+     </div>
+     <div class="form-group">
+       <label for="engines">Number of engine</label>
+       <input type="number" class="form-control" name="engines" ng-model="plane.engines">
+     </div>
+     <div class="form-group">
+       <label for="picture">Image Link</label>
+       <input type="text" class="form-control" ng-model="plane.image">
+     </div>
+     <input type="submit" class="btn btn-primary" value="Update Plane Details">
+ </form>

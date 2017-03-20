@@ -10,8 +10,6 @@ angular.module("FlyApp")
     addPlane: function(plane){
       $http.post("/api/airplanes", plane)
       .then(function success(response){
-        console.log("successful add!");
-        console.log(response)
         return response.data
       }, function error(err){
         console.log("error");
@@ -20,10 +18,25 @@ angular.module("FlyApp")
       })
     },
     deletePlane: function(id){
-      console.log("STUB");
+      var route = '/api/airplanes/' + id
+      $http.delete(route)
+      .then(function success(res) {
+
+        }, function error(err) {
+          console.log(res);
+        })
+
     },
     updatePlane: function(plane){
-      console.log("STUB");
+      return $http.put("api/airplanes/" + plane._id, plane)
+      .then(function success(res){
+        console.log("Successful update");
+        console.log(response);
+        return response.data
+      }, function error(err){
+        console.log("error", err);
+        return null
+      })
     }
   }
 }]);

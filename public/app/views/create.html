@@ -1,0 +1,23 @@
+<!-- Form to CREATE / POST Plane -->
+<a href="/" class="btn btn-success">Back</a>
+<form>
+  <div class="form-group">
+    <label>Manufacturer</label>
+    <input type="text" class="form-control" placeholder="Plane Manufacturer" ng-model="plane.manufacturer">
+  </div>
+  <div class="form-group">
+    <label>Model</label>
+    <input type="text" class="form-control" placeholder="Plane Model" ng-model="plane.model">
+  </div>
+  <div class="form-group">
+    <label>Engines</label>
+    <input type="number" class="form-control" placeholder="Number of Engines" ng-model="plane.engines">
+  </div>
+  <div class="form-group">
+    <label>Image</label>
+    <input type="text" class="form-control" placeholder="Image Link - http(s)://..." ng-model="plane.image">
+  </div>
+  <div class="form-group">
+    <input type="button" class="btn btn-primary" value="Create Plane" ng-click="submit()">
+  </div>
+</form>
