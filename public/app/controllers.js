@@ -39,7 +39,7 @@ angular.module("FlyApp")
     }
   }
 })
-.controller("CreateCtrl", ["$scope", "$http", "PlanesAPI", "$location", "$stateParams", function($scope, $http, PlanesAPI, $location, $stateParams){
+.controller("CreateCtrl", ["$scope", "$http", "PlanesAPI", "$state", "$stateParams", function($scope, $http, PlanesAPI, $state, $stateParams){
 
   $scope.plane = {
     manufacturer: "",
@@ -49,7 +49,11 @@ angular.module("FlyApp")
   }
 
   $scope.submit = function(){
-    PlanesAPI.addPlane($scope.plane)
-    $location.path("/");
+    PlanesAPI.addPlane($scope.plane).then(function success(res){
+      $state.go("plane", {id: res.data._id})
+    }, function error(err){
+      console.log(err);
+    })
+
   }
 }])

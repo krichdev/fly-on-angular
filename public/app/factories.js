@@ -8,14 +8,14 @@ angular.module("FlyApp")
       return $http.get("/api/airplanes/" + id);
     },
     addPlane: function(plane){
-      $http.post("/api/airplanes", plane)
-      .then(function success(response){
-        return response.data
-      }, function error(err){
-        console.log("error");
-        console.log(err);
-        return null;
-      })
+      return $http.post("/api/airplanes", plane)
+      // .then(function success(response){
+      //   return response.data
+      // }, function error(err){
+      //   console.log("error");
+      //   console.log(err);
+      //   return null;
+      // })
     },
     deletePlane: function(id){
       var route = '/api/airplanes/' + id

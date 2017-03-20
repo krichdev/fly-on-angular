@@ -5,5 +5,6 @@
 
 <div ng-repeat="p in planes">
   <h3><strong>{{ p.manufacturer }}</strong> {{ p.model }}</h3>
+  <img ng-src="{{ p.image }}" class="planeImg">
   <a ng-href="/plane/{{ p._id }}" class="btn btn-success">Details</a>
 </div>
