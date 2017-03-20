@@ -1,10 +1,13 @@
 <!--  Displays list of ALL planes -->
 <h2>{{ title }}</h2>
-<a ng-href="/create" class="btn btn-info">Create a New Plane</a>
 <p ng-hide="planes">LOADING PLANES NOW...</p>
-
-<div ng-repeat="p in planes">
-  <h3><strong>{{ p.manufacturer }}</strong> {{ p.model }}</h3>
-  <img ng-src="{{ p.image }}" class="planeImg">
-  <a ng-href="/plane/{{ p._id }}" class="btn btn-success">Details</a>
+<div class="row">
+  <div class="col-sm-6" ng-repeat="p in planes">
+    <h3><strong>{{ p.manufacturer }}</strong> {{ p.model }}</h3>
+    <img ng-src="{{ p.image }}" class="img-responsive planeImg">
+    <hr>
+    <div>
+      <a ng-href="/plane/{{ p._id }}" class="btn btn-success">Details</a>
+    </div>
+  </div>
 </div>
